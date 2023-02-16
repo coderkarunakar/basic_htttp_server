@@ -4,19 +4,19 @@
 
 
 
-//in this file we will be rendering the basic html file and like we will be knowing its content-type in the 
+//in this file we will be rendering the basic html file and like we will be knowing its content-type  
 //in the response header of network in the inspect page...
 
 
 
-    //serving response to the  browser...(FROM server to the browser...j)
+    //serving response to the  browser...(FROM server to the browser...)
 
 
     const http=require('http'); //in this line we are getting (http ) module by using require. function...
     //now we can use all the fucntionalities of http.and with the help of require fucntion both client and server both uses the http all fucntionalites...
     
     const port=8000;
-    const fs=require('fs');  //here fs(file specific) is a module it is used for reading nd writing from html. files...here just creating a variable in order to hold that property
+    const fs=require('fs');  //here fs(file specific) is a module it is used for ( reading nd writing from html.) files...here just creating a variable in order to hold that property
 
     //in this line we are creating a function with 2 arguments called request and response..
 
@@ -24,7 +24,7 @@
         console.log(request.url);  //this request.url is used to get the requested url(i.e 200) given below.. for success 
         response.writeHead(200,{'content-type':'text/html'})  //here just gave success code +content- type..res.writeHead() sends the response http status code 200 to the browser..
         
-        //writeHead mehtod is for returning a status code to the browser....   like 200 for success and it's content-type..(i.e it belongs to html,css,js or any file it belongings to...)
+        //writeHead mehtod is for (returning a status code to the browser)....   like 200 for success and it's content-type..(i.e it belongs to html,css,js or any file it belongings to...)
 
 
 
@@ -37,6 +37,7 @@
             //here first it takes I,e call back parameter is error next correct data...
             // fs is just we declared above in order to read and write html files... 
              
+            //here readfile is reading the index.html file..
         fs.readFile('./index.html',function(err,data){
             if(err){
                 console.log('errror',err)
@@ -49,7 +50,10 @@
         // response.end('<h1>Gotcha mama~!<h1>');  //end is used to end the response process.and prints something in the browser..page..
   
     }
+
     
+    //this http is used for transmitting the html files..
+
     const server=http.createServer(requestHandler);  //in this line simply server is just created...  with this line only actuall our web page is running without this it can't..
     
     
